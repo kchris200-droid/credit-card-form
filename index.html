@@ -168,7 +168,7 @@
      인쇄 전용
   ════════════════════════════════ */
   @media print {
-    @page { size: A4; margin: 15mm 18mm; }
+    @page { size: A4; margin: 30mm 18mm 15mm; }
     body { background: #fff; }
     .app-header,
     .container > .panel:first-child,
@@ -185,7 +185,7 @@
       box-shadow: none;
       padding: 0;
       min-height: unset;
-      height: calc(297mm - 30mm);
+      height: calc(297mm - 45mm);
       display: flex;
       flex-direction: column;
       font-size: 14pt !important;
@@ -600,20 +600,12 @@ function adjustAttach() {
   attachArea.style.height = Math.max(minH, remaining) + 'px';
 }
 </script>
-<div style="position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.92);border-top:1px solid #e0e4ea;padding:6px 18px;text-align:center;font-size:11px;color:#94a3b8;font-family:'맑은 고딕','Malgun Gothic',sans-serif;z-index:9999;backdrop-filter:blur(4px);">
+<div id="watermarkFooter" style="position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.92);border-top:1px solid #e0e4ea;padding:6px 18px;text-align:center;font-size:11px;color:#94a3b8;font-family:'맑은 고딕','Malgun Gothic',sans-serif;z-index:9999;backdrop-filter:blur(4px);">
   Made by Minyoung Kim
 </div>
 <style>
 @media print {
-  body::after {
-    content: 'Made by Minyoung Kim';
-    position: fixed;
-    bottom: 6mm;
-    right: 8mm;
-    font-size: 9pt;
-    color: #94a3b8;
-    font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
-  }
+  #watermarkFooter { display: none !important; }
 }
 </style>
 </body>
